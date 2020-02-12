@@ -11,4 +11,8 @@ configureMiddleware(server);
 server.use('/api/users', usersRouter);
 server.use('/api/auth', authRouter);
 
+server.get('/', (req, res) => {
+  res.status(200).json({ api: 'up' });
+});
+
 module.exports = server;
